@@ -21,13 +21,27 @@
 
             
             const possibleMoves = ["rock", "paper", "scissors"];
+            const playerSelection = "rock"
+            const computerSelection = computerPlay();
 
+            // Computer chooses random string from possibleMoves array
             function computerPlay() {
-                let y = possibleMoves[Math.floor(Math.random()*possibleMoves.length)]
-                console.log(y);
+                let x = possibleMoves[Math.floor(Math.random()*possibleMoves.length)]
+                return x;
             }
 
-            computerPlay();
+            // Takes in player & computer's selections and compares, logging message based on condition statements
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection === "rock" && computerSelection === "paper") {
+                    console.log("You lose! Paper beats rock.");
+                } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                    console.log("You win! Rock beats scissors.");
+                } else {
+                    console.log("Tie!");
+                }
+            }
+            
+            console.log(playRound(playerSelection, computerSelection));
         
         </script>
     </body>
