@@ -21,13 +21,20 @@
 
             
             const possibleMoves = ["rock", "paper", "scissors"];
-            const playerSelection = "rock"
+            const playerSelection = playerPlay();
             const computerSelection = computerPlay();
 
             // Computer chooses random string from possibleMoves array
             function computerPlay() {
                 let x = possibleMoves[Math.floor(Math.random()*possibleMoves.length)]
                 return x;
+            }
+
+            //Prompts user for input, converts it to lowercase, returns result
+            function playerPlay(input) {
+                let x = prompt("Choose rock, paper, or scissors:");
+                let y = x.toLowerCase();
+                return y;
             }
 
             // Takes in player & computer's selections and compares, logging message based on condition statements
